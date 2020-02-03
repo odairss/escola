@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %} Registrar Avaliação {% endblock title %}
+
+{% block content %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <p>Professor: {{professor}} <br/>
+            Turma: {{turma}}<br/>
+        </p>
+        <form method="post" xmlns="http://www.w3.org/1999/html">
+            {% csrf_token %}
+            <input type="hidden" value="{{turma.id_turma}}" name="idTurma" required="required"/><br/>
+            <div class="form-group">
+                <label for="titulo da avaliacao">Título da recupera&ccedil;&atilde;o:</label>
+                <input class="form-control" type="text" value="" name="nomerecuperacao" required="required"v/>
+            </div>
+            <div class="form-group">
+                <label for="data da recuperacao">Data da recupera&ccedil;&atilde;o:</label>
+               <input class="form-control" type="date" name="datarecuperacao" required="required">
+            </div>
+
+<div class="form-group">
+        <label for="bimestres">Bimestre:<sup>*</sup> </label>
+            <select class="form-control" name="idBim" required="required">
+                <option value="" selected="selected">--------------------</option>
+                {% for bim in bimestres %}
+                    <option value="{{bim.id_bimestre}}">{{bim}}</option>
+                {% endfor %}
+            </select>
+</div>
+<div class="form-group">
+        <label for="Disciplinas">Disciplina:<sup>*</sup></label>
+            <select class="form-control" name="idDisc" required="required">
+                <option value="" selected="selected">--------------------</option>
+                {% for disciplina in disciplinas %}
+                    <option value="{{disciplina.id_disciplina}}">{{disciplina}}</option>
+                {% endfor %}
+            </select>
+</div>
+
+
+            {% for aluno in alunos %}
+            <div class="form-group">
+                <div style="position: relative; float: left; width: 20%; border: 1px solid silver; border-radius: 3px">
+                    {{forloop.counter}} - {{aluno}}<br/>
+                </div>
+                <div style="position: relative; float: left; width: 80%;">
+                    <input class="form-control" type="text" name="{{aluno.id_aluno}}" required="required"/><br/>
+                </div>
+            </div>
+            {% endfor %}
+            <div style="position: relative; float: left; width: 100%;">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock content %}

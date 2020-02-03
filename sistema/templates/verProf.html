@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %} {{professor}} {% endblock title %}
+
+{% block content %}
+    <h1>{{professor}}</h1>
+<a href="{% url 'editarProf' professor.id_professor %}">editar</a> <a href="{% url 'deletarProf' professor.id_professor %}">excluir</a>
+<p>Turma: {{professor.id_turma}}</p>
+<p>Matrícula: {{professor.matricula}}</p>
+<p>Licenciatura: {{professor.licenciatura}}</p>
+<p>Nível: {{professor.nivel}}</p>
+<p>Letra: {{professor.classe}}</p>
+<p>CPF: {{professor.cpf}}</p>
+<p>Telefone: {{professor.telefone}}</p>
+<p>Data de Nascimento: {{professor.datanascimento}}</p>
+<p>Vínculo: {{professor.vinculo}}</p>
+<p>Data de admissão: {{professor.dataadmissao}}</p>
+{% endblock content %}

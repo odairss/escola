@@ -1,0 +1,451 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <title>E. M. Eulina Augusta</title>
+    <style type="text/css">
+        .container{
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            font-family: times, arial;
+        }
+
+        .linha{
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+
+        .header{
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .logoparnamirim {
+            float: left;
+            position: relative;
+            width: 30%;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+
+        .logoparnamirim p {
+            text-align: center;
+        }
+
+        .head {
+            float: left;
+            position: relative;
+            width: 70%;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+
+        .head h4 {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .main{
+            float: left;
+            position: relative;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        table {
+            width: 100%;
+            align: center;
+            margin: 5px;
+        }
+
+        .silver_color{
+            background-color: silver;
+        }
+        .vertical_text{
+              text-align: center;
+              writing-mode: vertical-rl;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="linha">
+        <header>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <p>
+                            <img src="/home/odair/escola/sistema/static/img/brasao-de-parnamirim.jpg" height='120px'
+                                width="150px">
+                        </p>
+                    </td>
+                        <td colspan="2">
+                            <h4>
+                                ESTADO DO RIO GRANDE DO NORTE<br/>
+                                PREFEITURA MUNICIPAL DE PARNAMIRIM<br/>
+                                SECRETARIA MUNICIPAL DE EDUCA&Ccedil;&Atilde;O E CULTURA<br/>
+                                ESCOLA MUNICIPAL PROFESSORA EULINA AUGUSTA DE ALMEIDA<br/>
+                            </h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <h4>HIST&Oacute;RICO ESCOLAR - ENSINO FUNDAMENTAL</h4>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+        <main class="main">
+            <table border="1" cellpadding="2" align="center">
+                <thead>
+                <tr>
+                    <th bgcolor="silver" colspan="4">DADOS DA ESCOLA</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="4">NOME DA ESCOLA: <strong>ESCOLA MUNICIPAL PROFESSORA EULINA AUGUSTA DE
+                        ALMEIDA</strong></td>
+                </tr>
+                <tr>
+                    <td ROWSPAN="2" colspan="1">ENDERE&Ccedil;O:</td>
+                    <td colspan="3"><strong>Loteamento S&atilde;o Vicente II, nº 250 CEP 59.144-365</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="3">FONE: <strong>(84) 98701-2972</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="2">BAIRRO: <strong>NOVA ESPERAN&Ccedil;A</strong></td>
+                    <td>MUNICÍPIO: <strong>PARNAMIRIM</strong></td>
+                    <td>UF: <strong>RN</strong></td>
+                </tr>
+                <tr>
+                    <td>ATO DE CRIA&Ccedil;&Atilde;O<br/><strong>0799/93</strong></td>
+                    <td>DATA: <strong>16/11/1993</strong></td>
+                    <td>DOE Nº__________</td>
+                    <td>DATA: ___/___/____</td>
+                </tr>
+                <tr>
+                    <td>ATO DE AUTORIZA&Ccedil;&Atilde;O<br/><strong>0150/97</strong></td>
+                    <td>DATA: <strong>07/04/1997</strong></td>
+                    <td>DOE Nº__________</td>
+                    <td>DATA: ___/___/____</td>
+                </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <table border="1" align="center" cellpadding="2">
+                <thead>
+                <tr>
+                    <th colspan="13" bgcolor="silver">DADOS DO ALUNO</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="1">NOME:</td>
+                    <td colspan="12"><strong>{{aluno}}</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><p>DATA DE NASCIMENTO:<br/><strong>{{aluno.datanascimento}}</strong></p></td>
+                    <td colspan="4"><p>NATURALIDADE:<br/><strong>{{aluno.naturalidade}}</strong></p></td>
+                    <td colspan="1"><p>UF:<br/><strong>{{aluno.uf}}</strong></p></td>
+                    <td colspan="4"><p>NACIONALIDADE:<br/><strong>{{aluno.nacionalidade}}</strong></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p>NOME DO PAI</p></td>
+                    <td colspan="11"><p><strong>{{aluno.pai}}</strong></p></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p>NOME DA M&Atilde;E:</p></td>
+                    <td colspan="11"><p><strong>{{aluno.mae}}</strong></p></td>
+                </tr>
+                <tr>
+                    <td rowspan="2" colspan="4" class="silver_color">
+                        <p><strong>COMPONENTES CURRICULARES</strong></p>
+                    </td>
+                    <td colspan="9">
+                        <strong>ENSINO FUNDAMENTAL</strong>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td bgcolor="silver">1º <br/>ANO</td>
+                    <td>2º<br/>ANO</td>
+                    <td>3º<br/>ANO</td>
+                    <td>4º<br/>ANO</td>
+                    <td>5º<br/>ANO</td>
+                    <td>6º<br/>ANO</td>
+                    <td>7º<br/>ANO</td>
+                    <td>8º<br/>ANO</td>
+                    <td>9º<br/>ANO</td>
+
+                </tr>
+                <tr>
+                    <td rowspan="11" colspan="1" class="silver_color">
+                        <div><p class="vertical_text">BASE NACIONAL COMUM CURRICULAR</p></div>
+                    </td>
+                    <td colspan="3">L&iacute;ngua Portuguesa</td>
+                    <td rowspan="20">ENSINO FUNDAMENTAL EM 9 ANOS LEI 11.114/05<br/>REGULAMENTADA PELA LEI 11.274/06
+                    </td>
+                    <td rowspan="20">ENSINO FUNDAMENTAL EM 9 ANOS LEI 11.114/05<br/>REGULAMENTADA PELA LEI 11.274/06
+                    </td>
+                    <td rowspan="20">ENSINO FUNDAMENTAL EM 9 ANOS LEI 11.114/05<br/>REGULAMENTADA PELA LEI 11.274/06
+                    </td>
+                    <td>Port</td>
+                    <td>Port</td>
+                    <td>Port</td>
+                    <td>Port</td>
+                    <td>Port</td>
+                    <td>Port</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Matem&aacute;tica</td>
+                    <td>Mat</td>
+                    <td>Mat</td>
+                    <td>Mat</td>
+                    <td>Mat</td>
+                    <td>Mat</td>
+                    <td>Mat</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Hist&oacute;ria</td>
+                    <td>Hist</td>
+                    <td>Hist</td>
+                    <td>Hist</td>
+                    <td>Hist</td>
+                    <td>Hist</td>
+                    <td>Hist</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Geografia</td>
+                    <td>Geo</td>
+                    <td>Geo</td>
+                    <td>Geo</td>
+                    <td>Geo</td>
+                    <td>Geo</td>
+                    <td>Geo</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Ci&ecirc;ncias</td>
+                    <td>Cie</td>
+                    <td>Cie</td>
+                    <td>Cie</td>
+                    <td>Cie</td>
+                    <td>Cie</td>
+                    <td>Cie</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Ensino da Arte</td>
+                    <td>Art</td>
+                    <td>Art</td>
+                    <td>Art</td>
+                    <td>Art</td>
+                    <td>Art</td>
+                    <td>Art</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Ensino Religioso</td>
+                    <td>Rel</td>
+                    <td>Rel</td>
+                    <td>Rel</td>
+                    <td>Rel</td>
+                    <td>Rel</td>
+                    <td>Rel</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Educa&ccedil;&atilde;o F&iacute;sica</td>
+                    <td>Fis</td>
+                    <td>Fis</td>
+                    <td>Fis</td>
+                    <td>Fis</td>
+                    <td>Fis</td>
+                    <td>Fis</td>
+                </tr>
+                <tr>
+                    <td colspan="3"> &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3"> &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3"> &nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td rowspan="9" colspan="1" class="silver_color">PARTE DIVERSIFICADA</td>
+                    <td colspan="3"></td>
+                    <td>next</td>
+                    <td>next</td>
+                    <td>next</td>
+                    <td>next</td>
+                    <td>next</td>
+                    <td>next</td>
+                </tr>
+
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                    <td>next 2</td>
+                </tr>
+
+                <tr>
+                    <td colspan="4" class="silver_color">DIAS LETIVOS</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td>200</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="silver_color">CARGA HOR&Aacute;RIA</td>
+                    <td>1000</td>
+                    <td>1000</td>
+                    <td>1000</td>
+                    <td>1000</td>
+                    <td>1000</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="silver_color">FREQU&Ecirc;NCIA %</td>
+                    <td>98%</td>
+                    <td>97%</td>
+                    <td>97%</td>
+                    <td>94%</td>
+                    <td>99%</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="silver_color">RESULTADO FINAL</td>
+                    <td>AP</td>
+                    <td>AP</td>
+                    <td>AP</td>
+                    <td>AP</td>
+                    <td>AP</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
+</body>
+</html>

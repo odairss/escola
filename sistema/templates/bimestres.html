@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Bimestres {% endblock title %}
+
+{% block content %}
+    <div class="col-md-12 col-lg-12">
+            <h1>Bimestres</h1>
+        <ul>
+            <li><a href="{% url 'regBimestre' %} ">Registrar um novo bimestre</a></li>
+            <li><a href="{% url 'listBimestres' %}">Listar todos os bimestres</a></li>
+        </ul>
+    </div>
+{% endblock content %}

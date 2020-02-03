@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar Turmas {% endblock title %}
+
+{% block content %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Turmas registradas</h1>
+        <ul>
+            {% for turma in turmas %}
+            <li>ID: {{turma.id_turma }} - {{turma}} <a href="{% url 'buscarTurma' turma.id_turma %}">Ver</a> <a href="{% url 'editarTurma' turma.id_turma %}">editar</a> </li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'registrarTurma' %} ">Registrar nova turma</a>
+    </div>
+{% endblock content %}

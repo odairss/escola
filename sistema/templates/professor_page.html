@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Registrar Aula {% endblock title %}
+
+{% block content %}
+<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+    {% if professor %}
+        <p>Ol&aacute;<br/>
+                {{ professor }} <a href="{% url 'buscarProf' professor.id_professor %}" target="_self">detalhes</a>
+        </p>
+        <p>{{turma}} - {{turma.id_anoletivo.ano}}</p>
+        <ul>
+
+            <li><a href="{% url 'regAvaliacao' professor.id_turma.id_turma %}">Registrar notas do bimestre para uma disciplina</a></li>
+            <li><a href="{% url 'listAvaliacoes' professor.id_turma.id_turma %}" target="_self">Ver notas registradas</a> </li>
+            <li><a href="{% url 'reg_recuperacao' professor.id_turma.id_turma %}">Registrar notas da recupera&ccedil;&atilde;o para uma disciplina</a></li>
+            <li><a href="{% url 'list_recuperacoes' professor.id_turma.id_turma %}" target="_self">Ver recupera&ccedil;&otilde;es registradas</a> </li>
+            <li><a href="{% url 'regAula' professor.id_professor %}">Registrar uma aula</a></li>
+            <li><a href="{% url 'listAulas' professor.id_professor %}" target="_self">ver aulas registradas</a> </li>
+            <li><a href="{% url 'listFrequencias' professor.id_turma.id_turma %}">Frequências</a></li>
+            <li><a href="{% url 'diarioToPDF' turma.id_turma %}" target="_self">Ver di&aacute;rio</a></li>
+
+        </ul>
+
+        {% for aluno in alunos %}
+            {{ aluno }} <a href="{% url 'buscarAluno' aluno.id_aluno %}" target="_self">detalhes</a><br/>
+        {% endfor %}
+    {% endif %}
+
+</div>
+{% endblock content %}

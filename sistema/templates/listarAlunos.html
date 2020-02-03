@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar Alunos {% endblock title %}
+
+{% block content %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Alunos registrados</h1>
+        <ul>
+            {% for aluno in alunos %}
+            <li>ID: {{aluno.id_aluno }} - {{aluno}} <a href="{% url 'buscarAluno' aluno.id_aluno %}">ver</a> <a href="{% url 'editarAluno' aluno.id_aluno %}">editar</a> </li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'registrarAluno' %} ">Registrar um novo aluno</a>
+    </div>
+{% endblock content %}

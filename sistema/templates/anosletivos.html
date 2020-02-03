@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Anos Letivos {% endblock title %}
+
+{% block content %}
+    <div class="col-md-12 col-lg-12">
+        <h1>Anos letivos</h1>
+        <ul>
+            <li><a href="{% url 'regAnoLetivo' %} ">Registrar um novo ano letivo</a></li>
+            <li><a href="{% url 'listAnosLetivos' %}">Listar todos os anos letivos</a></li>
+        </ul>
+    </div>
+{% endblock content %}

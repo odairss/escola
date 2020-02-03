@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar Turmas {% endblock title %}
+
+{% block content %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>Turmas</h1>
+        <ul>
+            <li><a href="{% url 'registrarTurma' %} ">Registrar nova turma</a></li>
+            <li><a href="{% url 'listarTurmas' %}">Listar todas as turmas</a></li>
+            <li><a href="">Cadastrar um aluno em uma turma</a></li>
+            <li><a href="">Cadastrar um professor em uma turma</a></li>
+        </ul>
+    </div>
+{% endblock content %}

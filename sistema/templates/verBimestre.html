@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} {{bimestre}} {% endblock title %}
+
+{% block content %}
+    <h1>{{bimestre}}</h1>
+<p>Data de início: {{bimestre.datainicio}}</p>
+<p>Data final: {{bimestre.datafim}}</p>
+<p>Ano letivo: {{bimestre.id_anoletivo.ano}}</p>
+
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} {{avaliacao}} {% endblock title %}
+
+{% block content %}
+    <h1>{{avaliacao}}</h1>
+<p>Código: {{avaliacao.id_avaliacao}}</p>
+<p>Título: {{avaliacao.nomeavaliacao}}</p>
+<p>Data: {{avaliacao.dataavaliacao}}</p>
+<p>Nota: {{avaliacao.nota}}</p>
+<p>Aluno: {{avaliacao.id_aluno}}</p>
+<p>Disciplina: {{avaliacao.id_disciplina}}</p>
+<p>Bimestre: {{avaliacao.id_bimestre}}</p>
+
+{% endblock content %}

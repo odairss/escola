@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+    <title>E. M. Eulina Augusta</title>
+    <style type="text/css">
+        body{
+            font-family: times, arial;
+            font-size: 1em;
+        }
+        .table_head{
+        text-align: center;
+        }
+        h1{
+        font-family: times, arial;
+        font-size: 5em;
+        }
+        .p-capa{
+        font-family: times, arial;
+        font-size: 2em;
+        }
+        .table_capa{
+        font-family: times, arial;
+        font-size: 1.5em;
+        }
+        .page-1-table-1{
+            margin-top: 500px;
+            font-family: times, arial;
+            font-size: 1em;
+        }
+        .page-1-head-1{
+            border: 0.5px solid black;
+            margin: 3px;
+        }
+        .page-1-head-2{
+            border: 0.5px solid black;
+            margin: 3px;
+        }
+        .page-1-table-2{
+            margin-top: 15px;
+            font-family: times, arial;
+            font-size: 1em;
+        }
+        .page-2-table-1{
+            margin-top: 200px;
+            font-family: times, arial;
+            font-size: 1em;
+        }
+        .page-2-table-2{
+        margin-top: 15px;
+        font-family: times, arial;
+        font-size: 0.9em;
+        }
+        .border{
+        border: 0.5px solid black;
+        }
+        .page-2-table-3{
+            margin-top: 15px;
+            font-family: times, arial;
+            font-size: 0.9em;
+        }
+        .page-3-table-1, .page-3-table-2{
+            font-family: times, arial;
+            font-size: 0.9em;
+        }
+        .page-3-table-2{
+        margin-top: 20px;
+        }
+        .page-3-table-2 th{
+            font-size: 2.5em;
+        }
+        .page-3-table-2 .page-3-table-2-resumo{
+            height: 850px;
+        }
+        .assinatura-do-professor{
+            margin-top: 20px;
+            font-family: times, arial;
+            font-size: 1em;
+        }
+        .page-4-table-1{
+            margin-bottom: 5px;
+        }
+        .page-4-table-2{
+            font-size: 0.9em;
+        }
+        .page-4-table-3{
+            margin-top: 8px;
+        }
+        .page-4-table-3 .td-anotacoes{
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="linha">
+
+<!--        ########## CAPA ##########-->
+        <header>
+            <table class="table_head" align="center" border="0" cellpadding="5">
+                <tbody>
+                <tr>
+                    <td>
+                        <p>
+                            <img src="/home/odair/escola/sistema/static/img/brasao-de-parnamirim.jpg" height='250px'
+                                width="250px">
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                        <td>
+                            <p class="p-capa">
+                                PREFEITURA MUNICIPAL DE PARNAMIRIM / RN<br/>
+                                SECRETARIA MUNICIPAL DE EDUCA&Ccedil;&Atilde;O E CULTURA
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><strong>DI&Aacute;RIO DE CLASSE</strong></h1>
+                        </td>
+                    </tr>
+                <tr>
+                    <td><p class="p-capa">ENSINO FUNDAMENTAL<br/>4º E 5º ANO</p></td>
+                </tr>
+                </tbody>
+            </table>
+        </header>
+        <main class="main">
+            <table class="table_capa" align="center" border="0.5" cellpadding="5">
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td colspan="2">ESTABELECIMENTO DE ENSINO:<br/>
+                    ESCOLA MUNICIPAL PROFESSORA EULINA AUGUSTA DE ALMEIDA</td>
+                </tr>
+                <tr>
+                    <td>MUNICÍPIO:<br/>PARNAMIRIM</td>
+                    <td>ANO:<br/>{{turma.id_anoletivo.ano}}</td>
+                </tr>
+                <tr>
+                    <td>GRAU DE ENSINO:<br/>
+                        {% if turma.graudeensino == 'EF1' %}
+                            ENSINO FUNDAMENTAL I
+                        {% elif turma.graudeensino == 'EF2' %}
+                            ENSINO FUNDAMENTAL II
+                        {% elif turma.graudeensino == 'EM' %}
+                            ENSINO M&Eacute;DIO
+                        {% elif turma.graudeensino == 'EI' %}
+                            EDUCA&Ccedil;&Atilde;O INFANTIL
+                        {% endif %}
+                    </td>
+                    <td>{{turma.anoturma}} ANO</td>
+                </tr>
+                <tr>
+                    <td>TURMA:<br/>{{turma.letraturma}}</td>
+                    <td>TURNO:<br/>{{turma.turno}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">PROFESSOR(A) RESPONS&Aacute;VEL:<br/>{{professor.nome}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">OBSERVA&Ccedil;&Otilde;ES:<br/>{{turma.observacoes}}</td>
+                </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+
+<!--            ########## PÁG. 1 ##########-->
+
+            <table class="page-1-table-1" align="center" border="0" cellspacing="3">
+                <thead>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <strong>PREFEITURA MUNICIPAL DE PARNAMIRIM</strong><br/>
+                        SECRETARIA MUNICIPAL DE EDUCA&Ccedil;&Atilde;O
+                    </td>
+                    <td class="page-1-head-1">
+                        {{turma.anoturma}}º ANO
+
+                    </td>
+                    <td class="page-1-head-2">
+                        TURMA: {{turma.letraturma}}
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <table class="page-1-table-2" border="0.5" align="center" cellpadding="1">
+                <thead>
+                <tr>
+                    <th width="30">Nº</th>
+                    <th width="250">NOME DO ALUNO</th>
+                    <th>SEXO</th>
+                    <th>DATA DE<br/>NASCIMENTO</th>
+                    <th>DATA DA<br/>MATR&Iacute;CULA</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for aluno in alunos %}
+                    <tr>
+                        <td width="30">{{aluno.id_aluno}}</td>
+                        <td width="250">{{aluno.nome}}</td>
+                        <td>{{aluno.sexo}}</td>
+                        <td>{{aluno.datanascimento}}</td>
+                        <td>{{aluno.datamatricula}}</td>
+                    </tr>
+                {% endfor %}
+                {% for linha in linhas %}
+                    <tr>
+                        <td width="30">{{linha}}</td>
+                        <td width="250"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+
+<!--            ########## PÁG. 2 ##########-->
+
+            <table class="page-2-table-1" width="300" align="left" border="0.5" cellpadding="5" cellspacing="3">
+                <thead></thead>
+                <tbody>
+                <tr><td>TURNO:{{turma.turno}} </td><td>ANO:{{turma.id_anoletivo.ano}} </td></tr></tbody>
+                <tfoot></tfoot>
+            </table>
+            <table class="page-2-table-2" cellpadding="1" align="center">
+                <thead>
+                <tr align="right"><th rowspan="3" width="350"></th><th class="border" COLSPAN="7">INFORMAÇÕES PARA O CENSO ESCOLAR</th></tr>
+                <tr align="right"><th colspan="7" class="border">PROCEDÊNCIA DO ALUNO</th></tr>
+                <tr align="right"><th colspan="5" class="border">DO SISTEMA REGULAR</th><th colspan="2" class="border">FORA DO<br/>SISTEMA</th></tr>
+                <tr align="left" class="border">
+                    <th width="350" align="center">ENDEREÇO</th>
+                    <th align="center">NA</th>
+                    <th align="center">PE</th>
+                    <th align="center">A</th>
+                    <th align="center">RA</th>
+                    <th align="center">T</th>
+                    <th align="center">NFE</th>
+                    <th align="center">EJA</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for aluno in alunos %}
+                <tr class="border">
+                    <td width="350" align="center">{{aluno.endereco}}</td>
+                    {% if aluno.procedencia == 'NA' %}
+                        <td align="center">x</td>
+                    {% else %}
+                        <td align="center"></td>
+                    {% endif %}
+
+                    {% if aluno.procedencia == 'PE' %}
+                        <td align="center">x</td>
+                    {% else %}
+                        <td align="center"></td>
+                    {% endif %}
+
+                    {% if aluno.procedencia == 'A' %}
+                        <td align="center">x</td>
+                    {% else %}
+                        <td align="center"></td>
+                    {% endif %}
+
+                    {% if aluno.procedencia == 'RA' %}
+                        <td align="center">x</td>
+                    {% else %}
+                        <td align="center"></td>
+                    {% endif %}
+
+                    {% if aluno.procedencia == 'T' %}
+                        <td align="center">x</td>
+                    {% else %}
+                        <td align="center"></td>
+                    {% endif %}
+
+                    {% if aluno.procedencia == 'NFE' %}
+                        <td align="center">x</td>
+                    {% else %}
+                        <td align="center"></td>
+                    {% endif %}
+
+                    {% if aluno.procedencia == 'EJA' %}
+                        <td align="center">x</td>
+                    {% else %}
+                        <td align="center"></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+                {% for linha in linhas %}
+                <tr class="border">
+                    <td width="350" align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                    <td align="center">&nbsp;</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <table border="0.5" align="center" cellpadding="3" class="page-2-table-3">
+                <thead></thead>
+                <tbody>
+                <tr>
+                    <td>OBSERVAÇÃO:<br/>{{turma.observacoes}}</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>LEGENDA:</td>
+                            </tr>
+                            <tr>
+                               <td>
+                                   <strong>NA:</strong> NOVATO NO ANO<br/>
+                                   <strong>PE: </strong> PRÓPRIA ESCOLA<br/>
+                                   <strong>A:</strong> APROVADO<br/>
+                                   <strong>RA:</strong> RETIDO NO CICLO<br/>
+                               </td>
+                                <td>
+                                    <strong>T:</strong> TRANSFERIDO<br/>
+                                    <strong>NFE:</strong> NÃO FREQUENTOU A ESCOLA NO ANO ANTERIOR<br/>
+                                    <strong>EJA:</strong> EDUCAÇÃO DE JOVENS E ADULTOS
+                                </td>
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+
+<!--            ########## PÁG. 3 ##########-->
+
+
+            <table class="page-3-table-1">
+                <tbody>
+                <tr>
+                    <td width="400">
+                        <table width="400">
+                            <tbody>
+                            <tr>
+                                <td>
+                                    PREFEITURA MUNICIPAL DE PARNAMIRIM / RN<br/>
+                                    SECRETARIA MUNICIPAL DE EDUCA&Ccedil;&Atilde;O E CULTURA
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                    <td width="250">
+                        <table width="250" border="0.5" cellpadding="5">
+                            <tbody>
+                                <tr>
+                                    <td align="center">
+                                        CONTEÚDO<br/>
+                                        MINISTRADO
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                    <td width="50">
+
+                    </td>
+
+                    <td width="250">
+                        <table width="250" border="0.5" cellpadding="5">
+                            <tbody>
+                                <tr>
+                                    <td align="center">
+                                        ANO<br/>
+                                        {{turma.id_anoletivo.ano}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        BIMESTRE:<br/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="page-3-table-2" border="0.5" cellpadding="5">
+                <thead>
+                    <tr>
+                        <th>
+                            RESUMO
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="page-3-table-2-resumo">
+                            &nbsp;
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="assinatura-do-professor">ASSINATURA DO PROFESSOR:__________________________________________________________</p>
+
+<!--            ########## PÁG. 4 ##########-->
+            {% for freq_mes in frequencias %}
+            <p style="margin-top: 100px;">
+                PREFEITURA MUNICIPAL DE PARNAMIRIM / RN <br/>
+                SECRETARIA MUNICIPAL DE EDUCA&Ccedil;&Atilde;O E CULTURA
+            </p>
+
+            <table class="page-4-table-1" border="0.5" width="150" cellpadding="5" align="right">
+                <tbody>
+                <tr>
+                    <td align="center">
+                        FREQU&Ecirc;NCIA
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="page-4-table-2" cellpadding="1">
+                    <thead>
+                    <tr>
+                        <th class="border" rowspan="2">Nº</th><th colspan="31" class="border" align="left">DIAS DOS MESES DE
+                        {% if freq_mes.0 == 1 %}
+                            JANEIRO
+                        {% elif freq_mes.0 == 2 %}
+                            FEVEREIRO
+                        {% elif freq_mes.0 == 3 %}
+                            MARÇO
+                        {% elif freq_mes.0 == 4 %}
+                            ABRIL
+                        {% elif freq_mes.0 == 5 %}
+                            MAIO
+                        {% elif freq_mes.0 == 6 %}
+                            JUNHO
+                        {% elif freq_mes.0 == 7 %}
+                            JULHO
+                        {% elif freq_mes.0 == 8 %}
+                            AGOSTO
+                        {% elif freq_mes.0 == 9 %}
+                            SETEMBRO
+                        {% elif freq_mes.0 == 10 %}
+                            OUTUBRO
+                        {% elif freq_mes.0 == 11 %}
+                            NOVEMBRO
+                        {% elif freq_mes.0 == 12 %}
+                            DEZEMBRO
+                        {% endif %}
+                    </th>
+                        <th rowspan="2" class="border">TOTAL<br/>DE FALTAS</th>
+                        <th rowspan="2" class="border">OBSERVA&Ccedil;&Otilde;ES</th>
+                    </tr>
+                    <tr>
+
+                        {% for dia in mes %}
+                            <th class="border">{{dia}}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {%for idaluno in freq_mes.1 %}
+                            <tr>
+                                <td class="border" align="center"> {{ idaluno.0 }}</td>
+                                {% for dia_f in idaluno.1 %}
+                                    <td class="border" align="center">
+                                        {{dia_f}}
+                                    </td>
+                                {% endfor %}
+                                <td class="border" width="80"> </td>
+                                <td class="border" width="80"> </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+            </table>
+            <table class="page-4-table-3" border="0.5" align="center">
+                <tbody>
+                <tr>
+                    <td class="td-anotacoes">
+                        ANOTA&Ccedil;&Otilde;ES:<br/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            {% endfor %}
+        </main>
+    </div>
+</div>
+</body>
+</html>

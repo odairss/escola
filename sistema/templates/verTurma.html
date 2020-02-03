@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %} {{turma}} {% endblock title %}
+
+{% block content %}
+    <h1>{{turma}}</h1>
+<p>Ano letivo: {{ turma.id_anoletivo.ano }}</p>
+<a href="{% url 'editarTurma' turma.id_turma %}">editar</a><br/>
+<a href="{% url 'deletarTurma' turma.id_turma %}">excluir</a><br/>
+{% if professor %}
+    <a href="{% url 'registrarAluno' %}">Cadastrar aluno nessa turma</a><br/>
+    {% if alunos %}
+        {% if disciplinas %}
+            <a href="{% url 'regAvaliacao' turma.id_turma %}">Registrar notas</a><br/>
+        {% else %}
+<!--            <a href="{% url 'registrarDisc' %}">Cadastrar disciplinas para o professor dessa turma</a><br/>-->
+        {% endif %}
+    {% endif %}
+{% else %}
+    <a href="{% url 'registrarProf' %}">Cadastrar professor da turma</a><br/>
+{% endif %}
+
+{% for prof in professor %}
+<p>Professor(a): {{prof}} <a href="{% url 'buscarProf' prof.id_professor %}">ver</a> </p>
+{% endfor %}
+<ul>
+    {% for aluno in alunos %}
+    <li>{{aluno}} <a href="{% url 'buscarAluno' aluno.id_aluno %}">ver</a> <a href="{% url 'editarAluno' aluno.id_aluno %}">editar</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock content %}

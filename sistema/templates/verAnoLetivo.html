@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %} {{anoletivo.ano}} {% endblock title %}
+
+{% block content %}
+    <h1>{{anoletivo.ano}}</h1>
+    <p>ID: {{anoletivo.id_anoletivo}}</p>
+    <p>In&iacute;cio: {{anoletivo.datainicial}}</p>
+    <p>Final: {{ anoletivo.datafinal }}</p>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar Anos Letivos {% endblock title %}
+
+{% block content %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Anos letivos registrados</h1>
+        <ul>
+            {% for ano in anosletivos %}
+            <li>ID: {{ano.id_anoletivo }} - {{ano.ano}} <a href="{% url 'buscarAnoLetivo' ano.id_anoletivo %}">Ver</a> <a href="{% url 'editAnoLetivo' ano.id_anoletivo %}">editar</a> </li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'regAnoLetivo' %} ">Registrar novo ano letivo</a>
+    </div>
+{% endblock content %}

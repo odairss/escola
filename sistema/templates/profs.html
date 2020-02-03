@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Professores {% endblock title %}
+
+{% block content %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <h1>Professores</h1>
+        <ul>
+            <li><a href="{% url 'registrarProf' %} ">Registrar um novo professor em uma determinada turma</a></li>
+            <li><a href="{% url 'listarProfs' %}">Listar todos os professores</a></li>
+        </ul>
+    </div>
+{% endblock content %}

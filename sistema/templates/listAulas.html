@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar Aulas {% endblock title %}
+
+{% block content %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Aulas registradas</h1>
+        <ul>
+            {% for aula in aulas %}
+            <li>ID: {{aula.id_aula }} - {{aula}} <a href="{% url 'buscarAula' aula.id_aula %}">Ver</a> <a href="{% url 'editAula' aula.id_aula %}">editar</a> </li>
+        {% endfor %}
+        </ul>
+<!--        <a href=" ">Registrar nova aula</a>-->
+    </div>
+{% endblock content %}

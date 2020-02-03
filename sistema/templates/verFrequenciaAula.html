@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}
+    {{frequencia.id_aula}}
+{% endblock title %}
+
+{% block content %}
+<div style="float: left; position: relative; left: 25%; width: 50%;">
+    <div style="float: left; position: relative; width: 100%; border: 1px solid blue;">
+         <p>Turma: {{frequencia.id_turma}}<br/>
+        Aula: {{frequencia.id_aula}}<br/>
+        Data: {{frequencia.id_aula.dataaula}}<br/>
+         Código: {{frequencia.id_frequencia}}</p>
+    </div>
+    <div style="float: left; position: relative; width: 100%; text-align: center;">
+        <div style="float: left; position: relative; width: 49.8%; border: 1px solid blue;">Aluno</div>
+        <div style="float: left; position: relative; width: 49.8%;">
+            <div style="float: left; position: relative; width: 32.6%; border: 1px solid blue; ">P</div>
+            <div style="float: left; position: relative; width: 32.6%; border: 1px solid blue; ">FJ</div>
+            <div style="float: left; position: relative; width: 32.6%; border: 1px solid blue; ">F</div>
+        </div>
+    </div>
+
+         {%for aluno_e_freq in alunos %}
+            <div style="float: left; position: relative; width: 100%;">
+                {% for freq in aluno_e_freq %}
+                    {% if freq not in tipos_frequencia %}
+                       <div style="float: left; position: relative; width: 49.8%; border: 1px solid blue;">{{freq}}</div>
+                    {% else %}
+                      <div style="float: left; position: relative; width: 49.8%; text-align: center;">
+                          <div style="float: left; position: relative; width: 32.6%; border: 1px solid blue">
+                              {% if freq == 'P' %}
+                                &bull;
+                              {% else %}
+                                &nbsp;
+                              {% endif %}
+                          </div>
+                          <div style="float: left; position: relative; width: 33%; border: 1px solid blue">
+                              {% if freq == 'FJ' %}
+                                &bull;
+                              {% else %}
+                                &nbsp;
+                              {% endif %}
+                          </div>
+                          <div style="float: left; position: relative; width: 32.6%; border: 1px solid blue">
+                              {% if freq == 'F' %}
+                                &bull;
+                              {% else %}
+                                &nbsp;
+                              {% endif %}
+                          </div>
+                      </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+</div>
+
+
+{% endblock content %}

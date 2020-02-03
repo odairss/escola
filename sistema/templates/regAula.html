@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Registrar Aula {% endblock title %}
+
+{% block content %}
+<div class="col-12 col-sm-12 col-md-12 col-lg-12">
+    <form method="post" xmlns="http://www.w3.org/1999/html">
+        {% csrf_token %}
+
+        <div id="div_id_nome" class="form-group required">
+            <label for="id_nome" class=" requiredField">
+                Título da Aula<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+                <input type="text" name="nome" maxlength="100" class="textinput textInput form-control"
+                       required id="id_nome">
+            </div>
+        </div>
+        <div id="div_id_id_professor" class="form-group required">
+            <label for="id_id_professor" class=" requiredField">
+                Professor<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+                <input type="text" name="id_professor" value="{{professor.id_professor}}" class="textimput textInput form-control" disabled="disabled"/>
+            </div>
+        </div>
+        <div id="div_id_id_disciplina" class="form-group required">
+            <label for="id_id_disciplina" class=" requiredField">
+            Disciplina<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+                <select name="id_disciplina" class="select form-control" required id="id_id_disciplina">
+                        <option value="" selected>---------</option>
+                    {% for disciplina in disciplinas %}
+                        <option value="{{disciplina.id_disciplina}}">{{disciplina}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div id="div_id_id_turma" class="form-group required">
+            <label for="id_id_turma" class=" requiredField">
+                Turma<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+                <input type="text" name="id_turma" value="{{turma.id_turma}}" class="textimput textInput form-control" disabled="disabled"/>
+            </div>
+        </div>
+        <div id="div_id_id_bimestre" class="form-group required">
+            <label for="id_id_bimestre" class=" requiredField">
+                Bimestre<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+                <select name="id_bimestre" class="select form-control" required id="id_id_bimestre">
+                    <option value="" selected>---------</option>
+                    {% for bimestre in bimestres %}
+                        <option value="{{bimestre.id_bimestre}}">{{bimestre}}</option>
+                    {% endfor %}
+
+                </select>
+            </div>
+        </div>
+        <div id="div_id_dataaula" class="form-group required">
+            <label for="id_dataaula" class=" requiredField">
+                Data da aula<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+                <input type="date" name="dataaula" class="dateinput form-control" required id="id_dataaula">
+            </div>
+        </div>
+        <div id="div_id_objetivo" class="form-group required">
+            <label for="id_objetivo" class=" requiredField">
+                Objetivo<span class="asteriskField">*</span>
+            </label>
+            <div class="">
+                <textarea name="objetivo" cols="40" rows="10" maxlength="500" class="textarea form-control"
+                          required id="id_objetivo"></textarea>
+            </div>
+        </div>
+        <div id="div_id_competenciaBNCC" class="form-group">
+            <label for="id_competenciaBNCC" class="">
+                Competências da BNCC
+            </label>
+            <div class="">
+                <textarea name="competenciaBNCC" cols="40" rows="10" maxlength="500"
+                          class="textarea form-control" id="id_competenciaBNCC"></textarea>
+            </div>
+        </div>
+        <div id="div_id_metodologia" class="form-group">
+            <label for="id_metodologia" class="">
+                Metodologia
+            </label>
+            <div class="">
+                <textarea name="metodologia" cols="40" rows="10" maxlength="500"
+                          class="textarea form-control" id="id_metodologia"></textarea>
+            </div>
+        </div>
+        <div id="div_id_recursos" class="form-group">
+            <label for="id_recursos" class="">
+                Recursos didáticos
+            </label>
+            <div class="">
+                <textarea name="recursos" cols="40" rows="10" maxlength="500" class="textarea form-control"
+                          id="id_recursos"></textarea>
+            </div>
+        </div>
+        <div id="div_id_avaliacao" class="form-group">
+            <label for="id_avaliacao" class="">
+                Avaliação
+            </label>
+            <div class="">
+                <textarea name="avaliacao" cols="40" rows="10" maxlength="500" class="textarea form-control"
+                          id="id_avaliacao"></textarea>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Registrar</button>
+    </form>
+    {% if aula %}
+    <a href="{% url 'delAula' aula.id_aula %}">Excluir aula</a>
+    {% endif %}
+</div>
+{% endblock content %}

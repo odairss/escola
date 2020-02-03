@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} Início {% endblock %}
+{% block content %}
+<div class="col-sm-12 col-md-12 col-lg-12">
+    <form action="{% url 'submit_prof' %} " method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="perfil" value="3"/>
+<!--        <div class="form-group">-->
+<!--            <label for="usuario">Usu&aacute;rio:</label>-->
+<!--            <input type="text" class="form-control" placeholder="Nome de usuário" id="username" name="username" required="required">-->
+<!--        </div>-->
+
+        <div class="form-group">
+            <label for="senha">CPF:</label>
+            <input type="password" class="form-control" placeholder="Senha" id="pwd" name="password" required="required">
+        </div>
+        {% for message in messages %}
+            <div class="alert alert-danger">
+                <strong>Error!</strong> {{message}}.
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Acessar</button>
+    </form>
+</div>
+
+{% endblock %}

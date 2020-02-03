@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar Bimestres {% endblock title %}
+
+{% block content %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Bimestres registrados</h1>
+        <ul>
+            {% for bim in bimestres %}
+            <li>ID: {{bim.id_bimestre }} - {{bimestre}} <a href="{% url 'buscarBimestre' bim.id_bimestre %}">Ver</a> <a href="{% url 'editBimestre' bim.id_bimestre %}">editar</a> </li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'regBimestre' %} ">Registrar novo bimestre</a>
+    </div>
+{% endblock content %}

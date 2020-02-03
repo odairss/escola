@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} {{recuperacao}} {% endblock title %}
+
+{% block content %}
+    <h1>{{recuperacao}}</h1>
+<p>Código: {{recuperacao.id_recuperacao}}</p>
+<p>Título: {{recuperacao.nomerecuperacao}}</p>
+<p>Data: {{recuperacao.datarecuperacao}}</p>
+<p>Nota: {{recuperacao.nota}}</p>
+<p>Aluno: {{recuperacao.id_aluno}}</p>
+<p>Disciplina: {{recuperacao.id_disciplina}}</p>
+<p>Bimestre: {{recuperacao.id_bimestre}}</p>
+
+{% endblock content %}

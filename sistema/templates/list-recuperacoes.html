@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Listar Avaliações {% endblock title %}
+
+{% block content %}
+<!--    <div class="col-sm-12 col-md-12 col-lg-12">-->
+        {% for bimestre in bimestres %}
+<!--        <div class="col-sm-12 col-md-12 col-lg-12" style="border: 1px solid red; margin: 0px; margin-bottom: 20px; background-color: #DCDCDC; padding: 0px;">-->
+            <div class="col-sm-12 col-md-12 col-lg-12" style="border: 1px solid green; margin: 0px; padding: 0px; text-align: center; background-color: #DCDCDC;">
+                <h1>Notas das recupera&ccedil;&otilde;es do {{ bimestre }}º bimestre por disciplina </h1>
+            </div>
+
+        {% for disciplina in disciplinas %}
+
+            <div class="col-sm-12 col-md-12 col-lg-12" style="border: 1px solid green; margin: 0px; padding: 0px; text-align: left; background-color: #DCDCDC;">
+                <h2>{{ disciplina }} </h2>
+            </div>
+
+            <div class="row" style="margin: 0px; padding: 0px;">
+                <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px; border: 1px solid green; margin: 0px; padding: 0px; background-color: #DCDCDC;">C&oacute;digo</div>
+                <div  class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid green; margin: 0px; padding: 0px; background-color: #DCDCDC;">Aluno</div>
+                <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid green; margin: 0px; padding: 0px; background-color: #DCDCDC;">Nota</div>
+                <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid green; margin: 0px; padding: 0px; background-color: #DCDCDC;">Op&ccedil;&otilde;es</div>
+            </div>
+
+                {% for recuperacao in recuperacoes %}
+                    {% if recuperacao.id_bimestre.id_bimestre == bimestre.id_bimestre and recuperacao.id_disciplina.id_disciplina == disciplina.id_disciplina %}
+
+                    <div class="row" style="border: 1px solid green; margin: 0px; padding: 0px;">
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid green; margin: 0px; padding: 0px;">
+                            {{recuperacao.id_recuperacao }}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid green; margin: 0px; padding: 0px;">
+                            {{recuperacao.id_aluno}}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid green; margin: 0px; padding: 0px;">
+                            {{recuperacao.nota}}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid green; margin: 0px; padding: 0px;">
+                            <a href="{% url 'buscar_recuperacao' recuperacao.id_recuperacao %}">Ver</a> <a href="{% url 'edit_recuperacao' recuperacao.id_recuperacao %}">editar</a>
+                        </div>
+                    </div>
+
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+<!--        </div>-->
+        {% endfor %}
+<!--    </div>-->
+{% endblock content %}

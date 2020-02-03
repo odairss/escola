@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Deletar Frequência {% endblock title %}
+
+{% block content %}
+    <div class="col-md-12 col-lg-12">
+        <form method="post" xmlns="http://www.w3.org/1999/html">
+        {% csrf_token %}
+            <h2>Tem certeza que você quer excluir a frequencia {{frequencia}}?</h2>
+            <button class="btn btn-primary" type="submit">Confirmar</button>
+        </form>
+    </div>
+{% endblock content %}

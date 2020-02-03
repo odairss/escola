@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar professores {% endblock title %}
+
+{% block content %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Professores registrados</h1>
+        <ul>
+            {% for professor in professores %}
+            <li>ID: {{professor.id_professor }} - {{professor}} <a href="{% url 'buscarProf' professor.id_professor %}">ver</a> <a href="{% url 'editarProf' professor.id_professor %}">editar</a> </li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'registrarProf' %} ">Registrar um novo professor</a>
+    </div>
+{% endblock content %}

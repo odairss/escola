@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Início {% endblock %}
+{% block content %}
+<div class="col-sm-12 col-md-12 col-lg-12">
+    <p>Olá Odair!</p>
+
+<!--        <li><a href="{% url 'anosletivos' %}">Anos Letivos</a> </li>-->
+<!--        <li><a href="{% url 'turmas' %}">Turmas</a></li>-->
+        <div class="col-sm-12 col-md-12 col-lg-12 menu-home-aluno"><a href="{% url 'alunos' %}">ALUNOS</a></div>
+        <div class="col-sm-12 col-md-12 col-lg-12 menu-home-professor"><a href="{% url 'login_prof' %}">PROFESSOR(a)</a></div>
+<!--        <li><a href="{% url 'disciplinas' %}">Disciplinas</a></li>-->
+<!--        <li><a href="{% url 'bimestres' %}">Bimestre</a></li>-->
+<!--        <li><a href="{% url 'avaliacoes' %}">Avaliações</a></li>-->
+<!--        <li><a href="{% url 'aulas' %}">Aulas</a></li>-->
+<!--        <li><a href="{% url 'frequencias' %}">Frequências</a></li>-->
+
+</div>
+
+{% endblock %}

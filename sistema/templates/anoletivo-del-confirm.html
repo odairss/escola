@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Deletar Ano Letivo {% endblock title %}
+
+{% block content %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <form method="post" xmlns="http://www.w3.org/1999/html">
+        {% csrf_token %}
+            <h2>Tem certeza que você quer excluir o ano letivo de {{anoletivo.ano}}?</h2>
+            <button  class="btn btn-primary" type="submit">Confirmar</button>
+        </form>
+    </div>
+{% endblock content %}

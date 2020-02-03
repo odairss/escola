@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %} {{aluno}} {% endblock title %}
+
+{% block content %}
+<div class="row" style="margin: 0px; padding: 0px; text-align: left;">
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12"
+         style="margin: 0px; padding: 0px; padding-left: 20px; padding-top: 20px; border: 1px solid black; background-color: #DCDCDC;">
+
+        <p>
+            <strong>{{aluno}}</strong> <a href="{% url 'generatePDF' aluno.id_aluno %}">hist&oacute;rico</a><br/>
+            DATA DE NASCIMENTO: <strong>{{aluno.datanascimento}}</strong><br/>
+            NATURALIDADE: <strong>{{aluno.naturalidade}}</strong><br/>
+            UF: <strong>{{aluno.uf}}</strong><br/>
+            NACIONALIDADE: <strong>{{aluno.nacionalidade}}</strong><br/>
+            NOME DO PAI: <strong>{{aluno.pai}}</strong><br/>
+            NOME DA MÃE: <strong>{{aluno.mae}}</strong><br/>
+            Turma: {{aluno.id_turma}}<br/>
+            {% if aluno.situacao == 'C' %}
+                Situa&ccedil;&atilde;o: <strong>CURSANDO</strong><br/>
+            {% elif aluno.situacao == 'R' %}
+                Situa&ccedil;&atilde;o: <strong>REPROVADO</strong><br/>
+            {% elif aluno.situacao == 'RC' %}
+                Situa&ccedil;&atilde;o: <strong>RECUPERAÇÃO</strong><br/>
+            {% elif aluno.situacao == 'T' %}
+                Situa&ccedil;&atilde;o: <strong>TRANSFERIDO</strong><br/>
+            {% elif aluno.situacao == 'AB' %}
+                Situa&ccedil;&atilde;o: <strong>ABANDONOU</strong><br/>
+            {% elif aluno.situacao == 'A' %}
+                Situa&ccedil;&atilde;o: <strong>APROVADO</strong><br/>
+            {% endif %}
+
+            Cartão SUS: {{aluno.cartaoSUS}}<br/>
+            Endereço: {{aluno.endereco}}<br/>
+            Telefone: {{aluno.telefone}}<br/>
+        </p>
+
+        <p>
+            <strong>Notas de cada disciplina por bimestre:<br/></strong>
+            {% for avaliacao in avaliacoes %}
+                {{avaliacao}} - {{ avaliacao.nota }}<br/>
+            {% endfor %}
+        </p>
+        <p>
+            <strong>Nota m&eacute;dia em cada disciplina:</strong><br/>
+            {% for rendimento in rendimento_escolar %}
+               {{ rendimento.0 }} - {{ rendimento.1 }}<br/>
+            {% endfor %}
+        </p>
+        <p>
+            Faltas: {{aluno.faltastotal}}<br/>
+            Presenças: {{aluno.presencatotal}}
+        </p>
+
+    </div>
+
+
+</div>
+{% endblock content %}

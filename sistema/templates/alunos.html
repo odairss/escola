@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Alunos {% endblock title %}
+
+{% block content %}
+    <div class="col-md-12 col-lg-12">
+        <h1>Alunos</h1>
+        <ul>
+            <li><a href="{% url 'registrarAluno' %} ">Registrar um novo aluno em uma determinada turma</a></li>
+            <li><a href="{% url 'listarAlunos' %}">Listar todos os alunos de uma determinada turma</a></li>
+        </ul>
+    </div>
+{% endblock content %}

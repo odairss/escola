@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} {{aula}} {% endblock title %}
+
+{% block content %}
+    <h1>{{aula}}</h1>
+    <p>ID: {{aula.id_aula}}</p>
+    <p>Nome: {{aula.nome}}</p>
+    <p>Data: {{aula.dataaula}}</p>
+    <p>Objetivo: {{aula.objetivo}}</p>
+    <p>Competência BNCC: {{aula.competenciaBNCC}}</p>
+    <p>Metodologia: {{aula.metodologia}}</p>
+    <p>Recursos: {{aula.recursos}}</p>
+    <p>Avaliação: {{aula.avaliacao}}</p>
+    <p>Disciplina: {{aula.id_disciplina}}</p>
+    <p>Professor: {{aula.id_professor}}</p>
+    <p>Turma: {{aula.id_turma}}</p>
+    <p>Bimestre: {{aula.id_bimestre}}</p>
+{% if aula.chamada %}
+    <a href="{% url 'verFrequenciaAula' aula.id_aula %}">consultar frequência dos alunos nessa aula</a>
+{% else %}
+    <a href="{% url 'registrarFrequencia' aula.id_aula aula.id_turma.id_turma %}">Registrar frequências dos alunos nessa aula</a>
+{% endif %}
+{% endblock content %}

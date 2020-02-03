@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %} Listar Avaliações {% endblock title %}
+
+{% block content %}
+<!--    <div class="col-sm-12 col-md-12 col-lg-12">-->
+        {% for bimestre in bimestres %}
+<!--        <div class="col-sm-12 col-md-12 col-lg-12" style="border: 1px solid red; margin: 0px; margin-bottom: 20px; background-color: #DCDCDC; padding: 0px;">-->
+            <div class="col-sm-12 col-md-12 col-lg-12" style="border: 1px solid silver; margin: 0px; padding: 0px; text-align: center; background-color: #DCDCDC;">
+                <h1>Notas do {{ bimestre }}º bimestre por disciplina </h1>
+            </div>
+
+        {% for disciplina in disciplinas %}
+
+            <div class="col-sm-12 col-md-12 col-lg-12" style="border: 1px solid silver; margin: 0px; padding: 0px; text-align: left; background-color: #DCDCDC;">
+                <h2>{{ disciplina }} </h2>
+            </div>
+
+            <div class="row" style="margin: 0px; padding: 0px;">
+                <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px; border: 1px solid silver; margin: 0px; padding: 0px; background-color: #DCDCDC; text-align: center;">Código</div>
+                <div  class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid silver; margin: 0px; padding: 0px; background-color: #DCDCDC; text-align: center;">Aluno</div>
+                <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid silver; margin: 0px; padding: 0px; background-color: #DCDCDC; text-align: center;">Nota</div>
+                <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid silver; margin: 0px; padding: 0px; background-color: #DCDCDC; text-align: center;">Opções</div>
+            </div>
+
+                {% for avaliacao in avaliacoes %}
+                    {% if avaliacao.id_bimestre.id_bimestre == bimestre.id_bimestre and avaliacao.id_disciplina.id_disciplina == disciplina.id_disciplina %}
+
+                    <div class="row" style="border: 1px solid green; margin: 0px; padding: 0px;">
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid silver; margin: 0px; padding: 0px; text-align: center;">
+                            {{avaliacao.id_avaliacao }}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid silver; margin: 0px; padding: 0px; text-align: center;">
+                            {{avaliacao.id_aluno}}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid silver; margin: 0px; padding: 0px; text-align: center;">
+                            {{avaliacao.nota}}
+                        </div>
+                        <div class="col-sm-3 col-md-3 col-lg-3" style="min-height: 40px;  border: 1px solid silver; margin: 0px; padding: 0px; text-align: center;">
+                            <a href="{% url 'buscarAvaliacao' avaliacao.id_avaliacao %}">Ver</a> <a href="{% url 'editAvaliacao' avaliacao.id_avaliacao %}">editar</a>
+                        </div>
+                    </div>
+
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+<!--        </div>-->
+        {% endfor %}
+<!--    </div>-->
+{% endblock content %}

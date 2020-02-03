@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Disciplinas {% endblock title %}
+
+{% block content %}
+    <div class="col-md-12 col-lg-12">
+        <h1>Disciplinas</h1>
+        <ul>
+            <li><a href="{% url 'registrarDisc' %} ">Registrar uma nova disciplina</a></li>
+            <li><a href="{% url 'listarDiscs' %}">Listar todas as disciplinas</a></li>
+        </ul>
+    </div>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Listar Disciplinas {% endblock title %}
+
+{% block content %}
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Disciplinas registradas</h1>
+        <ul>
+            {% for disc in disciplinas %}
+            <li>ID: {{disc.id_disciplina }} - {{disc}} <a href="{% url 'buscarDisc' disc.id_disciplina %}">ver</a> <a href="{% url 'editarDisc' disc.id_disciplina %}">editar</a> </li>
+        {% endfor %}
+        </ul>
+        <a href="{% url 'registrarDisc' %} ">Registrar uma nova disciplina</a>
+    </div>
+{% endblock content %}

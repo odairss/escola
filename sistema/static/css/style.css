@@ -1,0 +1,47 @@
+html{
+margin: 0px;
+padding: 0px;
+}
+header{
+text-align: center;
+padding: 10px;
+}
+ul{
+list-style: none;
+}
+footer{
+text-align: center;
+padding: 15px;
+}
+form{
+padding: 0px;
+margin: 0px;
+}
+.menu-home-aluno{
+  background-color: #BCCFDA;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.menu-home-professor{
+  background-color: #BCCFDA;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  text-align: center
+}
+.menu-home-aluno:hover, .menu-home-professor:hover{
+    background-color: #D3E1EA;
+}
+.menu-home-aluno a, .menu-home-professor a{
+    display: block;
+    font-family: times, arial;
+    font-size: 2em;
+    color: #96A2A9;
+    text-decoration: none;
+}
+.menu-home-aluno a:hover, .menu-home-professor a:hover{
+    color: #788085;
+}

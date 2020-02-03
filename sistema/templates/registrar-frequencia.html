@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %} Registrar Frequência {% endblock title %}
+
+{% block content %}
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="border: 1px solid silver; padding: 15px;">
+             Aula: {{aula}} <br/>
+             Data: {{aula.dataaula}}<br/>
+             Professor(a): {{aula.id_professor}}
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12"  style="border: 1px solid silver; margin: 0px; padding: 0px;">
+            <form method="post" xmlns="http://www.w3.org/1999/html">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="margin: 0px; padding: 0px;">
+                     <div  style="position: relative; float: left; width: 50%; border: .5px solid silver;">
+                         {% csrf_token %}
+                        <input type="hidden" value="{{aula.id_aula}}" name="idAula" required="required"/>
+                        <input type="hidden" value="{{aula.id_turma.id_turma}}" name="idTurma"  required="required"/>
+                        Aluno
+                     </div>
+                    <div style="position: relative; float: left; width: 50%; text-align: center; margin: 0px; padding: 0px;">
+                        <div style="position: relative; float: left; width: 33.33%; border: 1px solid silver;">
+                            P
+                        </div>
+                        <div style="position: relative; float: left; width: 33.33%; border: 1px solid silver;">
+                            FJ
+                        </div>
+                        <div style="position: relative; float: left; width: 33.33%; border: 1px solid silver;">
+                            F
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12" style="margin: 0px; padding: 0px;">
+                     {% for aluno in alunos %}
+                            <div style="position: relative; float: left; width: 50%; margin: 0px; padding: 0px; border: 1px solid silver;">
+                                 <input type="hidden" name="idAluno" value="{{ aluno.id_aluno }}"  required="required"/>
+                                 {{forloop.counter}}
+                                 {{aluno}}
+                            </div>
+                            <div style="position: relative; float: left; width: 50%; margin: 0px; padding: 0px; border: 1px solid silver; text-align: center; ">
+                                     <div style="position: relative; float: left; width: 33.33%; padding: 0px; margin: 0px; border: 1px solid silver;">
+                                           <input type="radio" name="{{aluno.id_aluno}}" value="P"  required="required"/>
+                                    </div>
+                                    <div style="position: relative; float: left; width: 33.33%; padding: 0px; margin: 0px; border: 1px solid silver;">
+                                           <input type="radio" name="{{aluno.id_aluno}}" value="F"  required="required"/>
+                                    </div>
+                                    <div style="position: relative; float: left; width: 33.33%; padding: 0px; margin: 0px; border: 1px solid silver;">
+                                           <input type="radio" name="{{aluno.id_aluno}}" value="FJ"  required="required"/>
+                                    </div>
+                            </div>
+                    {% endfor %}
+                </div>
+                <button class="btn btn-primary" type="submit">Registrar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
